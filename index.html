@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <!--Head Starts-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Kelin Store</title>
+        <link rel="icon" type="image/x-icon" href="taylor.jpg">
+    </head>
+    
+    <!-- body starts-->
+    <body id="body">
+        
+        <!--Navigation-->
+        <div id="navbar">
+        <h1 class="logo">🎸 Kelins'</h1>
+        <div>
+            <a href="#shop">Shop</a>
+            <a href="#videos">Videos</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+    <div class="cart">🛒 <span class="cart-count">0</span>
+        </div>
+        </div>
+        </div>
+
+    <!-- hero section-->
+        <div class="hero">
+            <div class="slideshow">
+                <img src="acoustic.jpg" alt="Acoustic Guitar">
+                <img src="Electric.jpg" alt="Electric Guitar">
+                <img src="fender.jpg" alt="Fender Guitar">
+                <img src="headstock.jpeg" alt="Yamaha Headstock">
+                <img src="studio.jpg" alt="Studio">
+            </div>
+            <div class="hero-content">
+            <h2>Find Your Perfect Guitar</h2>
+            <p>Electric, Acoustic and everything in between</p>
+            <a href="#shop">Shop Now</a></div>
+        </div>
+        
+<!-- Shop Section -->
+<div id="shop">
+  <h3>Our Guitars</h3>
+
+  <!-- Carousel -->
+  <div class="shop-carousel" id="shopCarousel">
+    <!-- Left Arrow -->
+    <button class="shop-btn" id="prevBtn">&#10094;</button>
+
+    <!-- Track -->
+    <div class="shop-track" id="shopTrack">
+
+      <!-- Shop Card 1 -->
+      <div class="shop-card">
+        <img src="Yamaha.jpeg" alt="Yamaha">
+        <div class="shop-card-content">
+          <h4>Yamaha 170G</h4>
+          <p>$349.99</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Shop Card 2 -->
+      <div class="shop-card">
+        <img src="Taylor 110E.jpg" alt="Taylor 110E">
+        <div class="shop-card-content">
+          <h4>Taylor 110E</h4>
+          <p>$199.99</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Shop Card 3 -->
+      <div class="shop-card">
+        <img src="lowden.jpg" alt="Lowden Barrel">
+        <div class="shop-card-content">
+          <h4>Lowden Barrel</h4>
+          <p>$449.99</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Shop Card 4 -->
+      <div class="shop-card">
+        <img src="set.jpg" alt="Ibanez set">
+        <div class="shop-card-content">
+          <h4>Ibanez Mini-Record Set</h4>
+          <p>$5,000.00</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Shop Card 5 -->
+      <div class="shop-card">
+        <img src="fender acoustasonic.jpg" alt="Fender Acoustasonic">
+        <div class="shop-card-content">
+          <h4>Fender Acoustasonic</h4>
+          <p>$699.99</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Shop Card 6 -->
+      <div class="shop-card">
+        <img src="Lava ME 3.jpg" alt="Lava ME 3">
+        <div class="shop-card-content">
+          <h4>Lava ME3</h4>
+          <p>$799.99</p>
+          <button onclick="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Arrow -->
+    <button class="shop-btn" id="nextBtn">&#10095;</button>
+  </div>
+</div>
+
+<!-- Video Section -->
+<div id="videos">
+  <h3>Watch Our Guitars in Action 🎥</h3>
+  
+  <!-- Arrow Buttons -->
+  <button class="scroll-btn left" onclick="scrollVideos(-1)">&#10094;</button>
+  <button class="scroll-btn right" onclick="scrollVideos(1)">&#10095;</button>
+  
+  <!-- Video Wrapper -->
+  <div class="video-wrapper">
+    <div class="video-container">
+      
+      <!-- Video Card 1 -->
+      <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=iawrAIumt3k', '_blank')">
+        <img src="https://img.youtube.com/vi/iawrAIumt3k/hqdefault.jpg" alt="LAVA ME3 Guitar">
+        <div class="play-button">▶</div>
+        <div class="video-info">
+          <h4>LAVA ME3 Guitar</h4>
+          <p>Watch the demo</p>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="video-card" onclick="window.open('https://www.youtube.com/watch?v=clBB30X0zIY', '_blank')">
+        <img src="https://img.youtube.com/vi/clBB30X0zIY/hqdefault.jpg" alt="Lowden">
+        <div class="play-button">▶</div>
+        <div class="video-info">
+          <h4>Lowden Guitars</h4>
+          <p>Watch the demo</p>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+      <div class="video-card" onclick="window.open('https:https://www.youtube.com/watch?v=nc4epnDxLzA', '_blank')">
+        <img src="https://img.youtube.com/vi/nc4epnDxLzA/hqdefault.jpg" alt="Taylor">
+        <div class="play-button">▶</div>
+        <div class="video-info">
+          <h4>Taylor Guitar</h4>
+          <p>Watch the demo</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="window.open('https:https://https://www.youtube.com/watch?v=j5nAngwKsus', '_blank')">
+        <img src="https://img.youtube.com/vi/j5nAngwKsus/hqdefault.jpg" alt="Fender">
+        <div class="play-button">▶</div>
+        <div class="video-info">
+          <h4>Fender Acoustasonic Guitar</h4>
+          <p>Watch the demo</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="window.open('https:https://https://www.youtube.com/watch?v=cSZpnaGpZBs', '_blank')">
+        <img src="https://img.youtube.com/vi/cSZpnaGpZBs/hqdefault.jpg" alt="Ibanez">
+        <div class="play-button">▶</div>
+        <div class="video-info">
+          <h4>Ibanez Electric Guitar</h4>
+          <p>Watch the demo</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- About Section -->
+<div id="about">
+  <h3>About Us</h3>
+  <p>
+    At KelinStore, we’ve been serving musicians for over 20 years. From beginners picking up their first instrument to professionals seeking top-tier sound, we provide a wide selection of guitars and accessories to keep the music alive.
+  </p>
+</div>
+
+<!-- Contact Section -->
+<div id="contact">
+  <h3>Contact Us</h3>
+  <p>📍 123 Music Lane, Lagos</p>
+  <p>📞 +234 800 123 4567</p>
+  <p>📧 info@kelinstore.com</p>
+</div>
+
+<!-- Footer -->
+<div id="footer">
+  <p>© 2025 GuitarStore. All rights reserved.</p>
+  <p>Follow us: 🎵 🎶 🎼</p>
+</div>
+
+<script>
+/* === Carousel scroll logic === */
+(function(){
+  const carousel = document.getElementById('shopCarousel');
+  const track = document.getElementById('shopTrack');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  if (!carousel || !track || !prevBtn || !nextBtn) {
+    console.warn('Carousel elements missing (shopCarousel/shopTrack/prevBtn/nextBtn).');
+    return;
+  }
+
+  function getScrollStep() {
+    const firstCard = track.querySelector('.shop-card');
+    if (!firstCard) return 320; // fallback
+    const cardRect = firstCard.getBoundingClientRect();
+    const style = getComputedStyle(track);
+    const gap = parseFloat(style.gap) || 25; // read CSS gap if supported
+    return Math.round(cardRect.width + gap);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    const step = getScrollStep();
+    carousel.scrollBy({ left: step, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const step = getScrollStep();
+    carousel.scrollBy({ left: -step, behavior: 'smooth' });
+  });
+
+  // Optional: recompute card width on resize (keeps scrolling accurate)
+  window.addEventListener('resize', () => { /* noop: getScrollStep reads fresh sizes */ });
+})();
+</script>
+
+<script>
+  function addToCart() {
+    // find the cart-count span
+    let cartCountEl = document.querySelector(".cart-count");
+    let currentCount = parseInt(cartCountEl.textContent) || 0;
+
+    // increase by 1
+    cartCountEl.textContent = currentCount + 1;
+  }
+</script>
+
+<script>
+function scrollVideos(direction) {
+  const container = document.querySelector("#videos .video-wrapper");
+  const scrollAmount = 350; // width of one card
+  container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+</script>
+
+
+    </body>
+</html>
