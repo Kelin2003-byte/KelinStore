@@ -398,3 +398,55 @@ h1, h2, h3, h4, h5, h6 {
   30% {opacity: 0;}
   100% {opacity: 0;}    
 }
+
+/* === Responsive Fixes === */
+
+/* Hide navigation arrows & resize cards for small screens */
+@media (max-width: 600px) {
+  /* Hide shop & video arrows */
+  .shop-btn,
+  .scroll-btn {
+    display: none;
+  }
+
+  /* Make shop and video cards smaller */
+  .shop-card,
+  .video-card {
+    flex: 0 0 240px;
+    max-width: 240px;
+  }
+
+  .shop-card img,
+  .video-card img {
+    height: 160px;
+  }
+
+  /* Adjust play button position (center of smaller image) */
+  .play-button {
+    top: 80px; /* half of new 160px height */
+    font-size: 32px;
+  }
+}
+
+/* Reduce font size of About Us paragraph for better match */
+#about p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Extra tweak for ultra small phones (≤ 400px) */
+@media (max-width: 400px) {
+  .shop-card,
+  .video-card {
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+  .shop-card img,
+  .video-card img {
+    height: 140px;
+  }
+  .play-button {
+    top: 70px;
+    font-size: 28px;
+  }
+}
