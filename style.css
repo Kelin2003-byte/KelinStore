@@ -450,3 +450,30 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 28px;
   }
 }
+
+/* Responsive heading adjustments */
+@media (max-width: 768px) {
+  #shop h3,
+  #videos h3,
+  #about h3,
+  #contact h3 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  #shop h3,
+  #videos h3,
+  #about h3,
+  #contact h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    line-height: 1.1; /* ✅ tighter spacing for wrapped headings */
+  }
+}
+
+  #about p,
+  #contact p {
+    font-size: 15px;
+  }
+}
