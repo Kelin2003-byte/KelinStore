@@ -472,8 +472,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* 📱 For very small screens (Galaxy Z Fold 5 portrait, iPhone SE, etc.) */
+@media (max-width: 400px) {
+  #shop h3,
+  #videos h3,
+  #about h3,
+  #contact h3 {
+    font-size: 19px;         /* ↓ slightly smaller */
+    margin-bottom: 18px;     /* keep balance */
+    line-height: 1.1;        /* consistent with above */
+  }
+}
+
   #about p,
   #contact p {
     font-size: 15px;
   }
 }
+
