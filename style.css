@@ -1,14 +1,17 @@
 /* === THEME VARIABLES === */
 :root {
-  --bg-color: #f9f9f9;
+  --bg-color: #f9f9f9; /* Light mode global background */
   --text-color: #222;
-  --section-bg: #ffffff;
+  --section-bg: #ffffff; /* Light mode section background */
   --navbar-bg: #222;
   --card-bg: #fff;
   --accent-color: #ff9800;
+  --footer-bg: #222;
 }
 
+/* === BASE STYLES - Use variables everywhere === */
 body {
+  /* This now sets the background for the entire visible page */
   background: var(--bg-color);
   color: var(--text-color);
   transition: background 0.4s ease, color 0.4s ease;
@@ -17,13 +20,15 @@ body {
 /* Apply theme to key elements */
 #navbar {
   background: var(--navbar-bg);
-  color: var(--text-color);
+  color: #fff; /* Navbar text stays white in light mode for contrast */
 }
 
+/* 1. Use the section variable for sections */
 #shop,
 #videos,
 #about,
 #contact {
+  /* Use a consistent background variable for all sections */
   background: var(--section-bg);
 }
 
@@ -32,15 +37,38 @@ body {
   background: var(--card-bg);
 }
 
-/* === DARK MODE === */
+#footer {
+  background: var(--footer-bg);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+/* === DARK MODE VARIABLES === */
 body.dark-mode {
-  --bg-color: #121212;
+  --bg-color: #121212; /* Dark mode global background */
   --text-color: #f1f1f1;
-  --section-bg: #1e1e1e;
+  --section-bg: #1e1e1e; /* Dark mode section background */
   --navbar-bg: #000;
   --card-bg: #222;
   --accent-color: #ffb74d;
+  --footer-bg: #1a1a1a;
 }
+
+/* 2. Remove the specific light backgrounds you had defined lower down */
+/* The general section and body rules above now handle the coloring */
+/* I have commented out or removed the old conflicting rules: */
+
+/* Old fixed background section rules (REMOVED/MODIFIED) */
+/*
+#shop { background: whitesmoke; }
+#videos { background: #f5f7fa; }
+#about { background: #fffdf7; }
+#contact { background: #f0f0f0; }
+*/
+/* The updated section rules using --section-bg now allow the dark mode
+   variables defined in body.dark-mode to control their color.
+*/
+
 .theme-toggle {
   margin-left: 10px; /* keeps space between cart and toggle */
 }
@@ -50,8 +78,8 @@ html {scrollbar-gutter: stable;}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #222;
+  /* background: #f9f9f9; - REMOVED: now controlled by var(--bg-color) */
+  /* color: #222; - REMOVED: now controlled by var(--text-color) */
   scroll-behavior: smooth;
   transition: all 0.3s ease;
 }
@@ -91,16 +119,17 @@ body,
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background: #222;
-  color: #fff;
+  /* background: #222; - REMOVED: now controlled by var(--navbar-bg) */
+  /* color: #fff; - MODIFIED: now using fixed #fff above, or var(--text-color) in dark mode */
   box-shadow: 0 2px 5px rgba(0,0,0,0.4);
   z-index: 1000;
   transition: all 0.3s ease;
 }
+/* This rule needs to be updated to use var(--text-color) in dark mode */
 #navbar a {
   margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: inherit; /* Inherit color from navbar */
   font-size: 18px;
   font-weight: 500;
   display: inline-block;
@@ -290,7 +319,7 @@ body.dark-mode .hero::after {
   max-width: 300px;
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; - REMOVED: now controlled by var(--card-bg) */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -347,7 +376,7 @@ body.dark-mode .hero::after {
   width: 300px;
   border-radius: 12px;
   overflow: hidden;
-  background: #fff;
+  /* background: #fff; - REMOVED: now controlled by var(--card-bg) */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -379,7 +408,7 @@ body.dark-mode .hero::after {
 }
 .video-info {padding: 15px; text-align: center;}
 .video-info h4 {margin: 0; font-size: 20px;}
-.video-info p {margin: 5px 0 0; font-size: 14px; color: #555;}
+.video-info p {margin: 5px 0 0; font-size: 14px; color: var(--text-color); opacity: 0.7;}
 
 /* Video Arrows */
 .scroll-btn {
@@ -401,7 +430,7 @@ body.dark-mode .hero::after {
 /* About Section */
 #about {
   padding: 60px 20px;
-  background: #fff;
+  /* background: #fff; - REMOVED: now controlled by var(--section-bg) */
   text-align: center;
 }
 #about h3 {
@@ -418,7 +447,7 @@ body.dark-mode .hero::after {
 /* Contact Section */
 #contact {
   padding: 60px 20px;
-  background: #f0f0f0;
+  /* background: #f0f0f0; - REMOVED: now controlled by var(--section-bg) */
   text-align: center;
 }
 #contact h3 {
@@ -434,30 +463,29 @@ body.dark-mode .hero::after {
 #footer {
   text-align: center;
   padding: 25px;
-  background: #222;
-  color: #fff;
+  /* background: #222; - REMOVED: now controlled by var(--footer-bg) */
+  /* color: #fff; - REMOVED: now controlled by base rule */
   transition: all 0.3s ease;
 }
 #footer p {
   margin: 8px 0;
 }
 
-/* Section backgrounds - alternating subtle pastels */
+/* Old fixed section backgrounds (REMOVED) */
+/*
 #shop {
-  background: whitesmoke; /* clean white */
+  background: whitesmoke;
 }
-
 #videos {
-  background: #f5f7fa; /* soft cool gray-blue */
+  background: #f5f7fa;
 }
-
 #about {
-  background: #fffdf7; /* warm off-white, creamy tint */
+  background: #fffdf7;
 }
-
 #contact {
-  background: #f0f0f0; /* neutral gray (consistent for contact) */
+  background: #f0f0f0;
 }
+*/
 
 
 /* === Responsive Design === */
@@ -569,7 +597,7 @@ body.dark-mode .hero::after {
   #contact h3 {
     font-size: 22px;
     margin-bottom: 20px;
-    line-height: 1.1; /* ✅ tighter spacing for wrapped headings */
+    line-height: 1.1; /* tighter spacing for wrapped headings */
   }
 }
 
@@ -583,7 +611,6 @@ body.dark-mode .hero::after {
     margin-bottom: 20px;     /* keep balance */
     line-height: 1.1;        /* consistent with above */
   }
-}
 
   #about p,
   #contact p {
@@ -592,48 +619,36 @@ body.dark-mode .hero::after {
 }
 
 /* === 🌙 Global Dark Mode Styles (Full Page) === */
-body.dark-mode {
-  background: #121212 !important;  /* ✅ affects entire page, not just sections */
-  color: #eaeaea !important;
-}
+/* This block is largely simplified now that everything uses CSS variables */
 
-/* Navbar */
 body.dark-mode #navbar {
-  background: #1e1e1e;
-  color: #f5f5f5;
-  box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+  background: var(--navbar-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Revert shadow for visibility */
 }
 body.dark-mode #navbar a {
-  color: #ddd;
+  color: var(--text-color);
 }
 body.dark-mode #navbar a:hover {
-  color: #ff9800;
-}
-
-/* Sections adopt transparent backgrounds so body color shows through */
-#shop,
-#videos,
-#about,
-#contact {
-  background: transparent;
+  color: var(--accent-color);
 }
 
 /* Cards */
 body.dark-mode .shop-card,
 body.dark-mode .video-card {
-  background: #242424;
-  color: #f0f0f0;
-  box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+  background: var(--card-bg);
+  color: var(--text-color);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 body.dark-mode .shop-card button {
-  background: #ff9800;
-  color: #fff;
+  background: var(--accent-color);
+  color: #222; /* Black text on accent color */
 }
 
 /* Footer */
 body.dark-mode #footer {
-  background: #1a1a1a;
-  color: #ccc;
+  background: var(--footer-bg);
+  color: var(--text-color);
 }
 
 /* Toggle styling */
@@ -641,11 +656,6 @@ body.dark-mode .theme-toggle {
   background: #444;
 }
 body.dark-mode .toggle-circle {
-  background: #ffcc00;
-  transform: translateX(26px);
+  background: var(--accent-color);
+  transform: translateX(24px); /* Keeping this consistent with the base rule */
 }
-
-
-
-
-
