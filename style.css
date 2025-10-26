@@ -7,6 +7,7 @@
   --card-bg: #fff;
   --accent-color: #ff9800;
   --footer-bg: #222;
+  --carousel-bg: #ffffff; /* Light mode scrollable areas: White */
 }
 
 /* === BASE STYLES - Use variables everywhere === */
@@ -32,6 +33,13 @@ body {
   background: var(--section-bg);
 }
 
+/* Add explicit background for carousels to separate them from the main section background */
+.shop-carousel,
+.video-wrapper {
+  background: var(--carousel-bg); /* Use the new carousel background variable */
+  padding: 20px 0; /* Add vertical padding back here for spacing */
+}
+
 .shop-card,
 .video-card {
   background: var(--card-bg);
@@ -52,6 +60,7 @@ body.dark-mode {
   --card-bg: #222;
   --accent-color: #ffb74d;
   --footer-bg: #1a1a1a;
+  --carousel-bg: #ffffff; /* **UPDATED**: This forces the scrollable area to be white in dark mode, matching the video section look you prefer. */
 }
 
 /* 2. Remove the specific light backgrounds you had defined lower down */
@@ -366,7 +375,7 @@ body.dark-mode .hero::after {
 .video-container {
   display: flex;
   gap: 25px;
-  padding: 0 20px; /* horizontal only, no top padding */
+  /* padding: 0 20px; - REMOVED padding here, moved to .video-wrapper/shop-carousel */
   box-sizing: border-box;
 }
 .video-card:hover {transform: translateY(-5px);}
