@@ -591,11 +591,10 @@ body.dark-mode .hero::after {
   }
 }
 
-/* === 🌙 Global Dark Mode Styles === */
+/* === 🌙 Global Dark Mode Styles (Full Page) === */
 body.dark-mode {
-  background-color: #121212; /* deep but not pure black */
-  color: #e5e5e5; /* readable light grey for text */
-  transition: background 0.4s ease, color 0.4s ease;
+  background: #121212 !important;  /* ✅ affects entire page, not just sections */
+  color: #eaeaea !important;
 }
 
 /* Navbar */
@@ -611,80 +610,33 @@ body.dark-mode #navbar a:hover {
   color: #ff9800;
 }
 
-/* Hero Section */
-body.dark-mode .hero {
-  color: #fff;
-}
-body.dark-mode .hero::after {
-  background: rgba(0, 0, 0, 0.6);
-}
-body.dark-mode .hero h2,
-body.dark-mode .hero p {
-  color: #fff;
-}
-body.dark-mode .hero a {
-  background: #ff9800;
-  color: #fff;
-}
-body.dark-mode .hero a:hover {
-  background: #e68900;
-}
-
-/* Section Backgrounds */
-body.dark-mode #shop,
-body.dark-mode #videos,
-body.dark-mode #about,
-body.dark-mode #contact {
-  background: #1a1a1a;
-  color: #f0f0f0;
-}
-
-/* Headings inside dark sections */
-body.dark-mode #shop h3,
-body.dark-mode #videos h3,
-body.dark-mode #about h3,
-body.dark-mode #contact h3 {
-  color: #ffcc80; /* warm soft gold highlight */
+/* Sections adopt transparent backgrounds so body color shows through */
+#shop,
+#videos,
+#about,
+#contact {
+  background: transparent;
 }
 
 /* Cards */
 body.dark-mode .shop-card,
 body.dark-mode .video-card {
   background: #242424;
-  color: #e0e0e0;
+  color: #f0f0f0;
   box-shadow: 0 2px 8px rgba(255,255,255,0.05);
-}
-body.dark-mode .shop-card h4,
-body.dark-mode .video-info h4 {
-  color: #fff;
-}
-body.dark-mode .shop-card p,
-body.dark-mode .video-info p {
-  color: #ccc;
 }
 body.dark-mode .shop-card button {
   background: #ff9800;
   color: #fff;
 }
-body.dark-mode .shop-card button:hover {
-  background: #e68900;
-}
-
-/* Video Section */
-body.dark-mode .video-card img {
-  opacity: 0.9;
-}
-body.dark-mode .play-button {
-  background: rgba(255,255,255,0.2);
-}
 
 /* Footer */
 body.dark-mode #footer {
-  background: #1b1b1b;
+  background: #1a1a1a;
   color: #ccc;
 }
 
-/* Toggle */
+/* Toggle styling */
 body.dark-mode .theme-toggle {
   background: #444;
 }
@@ -692,6 +644,7 @@ body.dark-mode .toggle-circle {
   background: #ffcc00;
   transform: translateX(26px);
 }
+
 
 
 
