@@ -33,10 +33,10 @@ body {
   background: var(--section-bg);
 }
 
-/* Add explicit background for carousels to separate them from the main section background */
+/* Apply background variable to carousels (defaults to white in light mode) */
 .shop-carousel,
 .video-wrapper {
-  background: var(--carousel-bg); /* Use the new carousel background variable */
+  background: var(--carousel-bg);
   padding: 20px 0; /* Add vertical padding back here for spacing */
 }
 
@@ -55,12 +55,22 @@ body {
 body.dark-mode {
   --bg-color: #121212; /* Dark mode global background */
   --text-color: #f1f1f1;
-  --section-bg: #1e1e1e; /* Dark mode section background */
+  --section-bg: #1e1e1e; /* Dark mode section background (e.g., for headings) */
   --navbar-bg: #000;
   --card-bg: #222;
   --accent-color: #ffb74d;
   --footer-bg: #1a1a1a;
-  --carousel-bg: #ffffff; /* **UPDATED**: This forces the scrollable area to be white in dark mode, matching the video section look you prefer. */
+  --carousel-bg: #1e1e1e; /* **REVERTED**: Base carousel background is dark gray */
+}
+
+/* **TARGETED FIX**
+   Forces the scrollable track/wrapper background to white in Dark Mode.
+   This creates the effect you wanted: dark background for the section,
+   with a bright, high-contrast scroll area.
+*/
+body.dark-mode .shop-carousel,
+body.dark-mode .video-wrapper {
+  background: #ffffff; /* White background for the slides/cards to sit on */
 }
 
 /* 2. Remove the specific light backgrounds you had defined lower down */
@@ -258,7 +268,7 @@ body.dark-mode .toggle-circle {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 .hero a:hover {transform: scale(0.95); background: #0c07075d;}
-.hero h2, .hero p {transition: transform 0.3s ease, color 0.3s ease;}
+.hero h2, .hero p {transition: transform 0.3s ease, color: 0.3s ease;}
 .hero h2:hover, .hero p:hover {transform: scale(0.95); color: grey;}
 .hero-content {position: relative; z-index: 2; max-width: 800px; margin: 0 auto;}
 body.dark-mode .hero::after {
