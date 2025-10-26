@@ -55,22 +55,15 @@ body {
 body.dark-mode {
   --bg-color: #121212; /* Dark mode global background */
   --text-color: #f1f1f1;
-  --section-bg: #1e1e1e; /* Dark mode section background (e.g., for headings) */
+  --section-bg: #1e1e1e; /* Dark mode section background (dark gray) */
   --navbar-bg: #000;
   --card-bg: #222;
   --accent-color: #ffb74d;
   --footer-bg: #1a1a1a;
-  --carousel-bg: #1e1e1e; /* **REVERTED**: Base carousel background is dark gray */
-}
-
-/* **TARGETED FIX**
-   Forces the scrollable track/wrapper background to white in Dark Mode.
-   This creates the effect you wanted: dark background for the section,
-   with a bright, high-contrast scroll area.
-*/
-body.dark-mode .shop-carousel,
-body.dark-mode .video-wrapper {
-  background: #ffffff; /* White background for the slides/cards to sit on */
+  /* NOTE: --carousel-bg is intentionally NOT defined here.
+           It will fall back to the light mode value (white: #ffffff)
+           which is what you wanted for contrast.
+  */
 }
 
 /* 2. Remove the specific light backgrounds you had defined lower down */
