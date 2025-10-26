@@ -41,6 +41,9 @@ body.dark-mode {
   --card-bg: #222;
   --accent-color: #ffb74d;
 }
+.theme-toggle {
+  margin-left: 10px; /* keeps space between cart and toggle */
+}
 
 /* === Base Resets === */
 html {scrollbar-gutter: stable;}
@@ -587,6 +590,7 @@ body.dark-mode .hero::after {
     font-size: 15px;
   }
 }
+
 
 
 
