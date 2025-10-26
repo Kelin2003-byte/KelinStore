@@ -1,3 +1,47 @@
+/* === THEME VARIABLES === */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #222;
+  --section-bg: #ffffff;
+  --navbar-bg: #222;
+  --card-bg: #fff;
+  --accent-color: #ff9800;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Apply theme to key elements */
+#navbar {
+  background: var(--navbar-bg);
+  color: var(--text-color);
+}
+
+#shop,
+#videos,
+#about,
+#contact {
+  background: var(--section-bg);
+}
+
+.shop-card,
+.video-card {
+  background: var(--card-bg);
+}
+
+/* === DARK MODE === */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --section-bg: #1e1e1e;
+  --navbar-bg: #000;
+  --card-bg: #222;
+  --accent-color: #ffb74d;
+}
+
 /* === Base Resets === */
 html {scrollbar-gutter: stable;}
 body {
@@ -10,6 +54,22 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;   /* remove browser default top margin */
+}
+/* Smooth theme transition */
+body, 
+#navbar, 
+#shop, 
+#videos, 
+#about, 
+#contact, 
+.shop-card, 
+.video-card, 
+.hero::after {
+  transition: 
+    background-color 0.4s ease,
+    color 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
 }
 
 /* === Navbar === */
@@ -84,6 +144,41 @@ h1, h2, h3, h4, h5, h6 {
 }
 #navbar > div {margin-left: auto;}
 
+/* === THEME TOGGLE SWITCH === */
+.theme-toggle {
+  width: 50px;
+  height: 26px;
+  background: #555;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+}
+
+.theme-toggle .toggle-circle {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: relative;
+  left: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* DARK MODE SWITCH STATE */
+body.dark-mode .theme-toggle {
+  background: var(--accent-color);
+  box-shadow: 0 0 10px rgba(255, 183, 77, 0.6);
+}
+
+body.dark-mode .toggle-circle {
+  transform: translateX(24px);
+  background: #222;
+}
+
 /* === Hero Section === */
 .hero {
   position: relative;
@@ -125,6 +220,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero h2, .hero p {transition: transform 0.3s ease, color 0.3s ease;}
 .hero h2:hover, .hero p:hover {transform: scale(0.95); color: grey;}
 .hero-content {position: relative; z-index: 2; max-width: 800px; margin: 0 auto;}
+body.dark-mode .hero::after {
+  background: rgba(0, 0, 0, 0.65); /* darkens overlay slightly */
+}
 
 /* Hero Slideshow */
 .slideshow {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden;}
@@ -489,5 +587,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 15px;
   }
 }
+
 
 
