@@ -7,7 +7,6 @@
   --card-bg: #fff;
   --accent-color: #ff9800;
   --footer-bg: #222;
-  --carousel-bg: #ffffff; /* Light mode scrollable areas: White */
 }
 
 /* === BASE STYLES - Use variables everywhere === */
@@ -33,13 +32,6 @@ body {
   background: var(--section-bg);
 }
 
-/* Apply background variable to carousels (defaults to white in light mode) */
-.shop-carousel,
-.video-wrapper {
-  background: var(--carousel-bg);
-  padding: 20px 0; /* Add vertical padding back here for spacing */
-}
-
 .shop-card,
 .video-card {
   background: var(--card-bg);
@@ -55,15 +47,11 @@ body {
 body.dark-mode {
   --bg-color: #121212; /* Dark mode global background */
   --text-color: #f1f1f1;
-  --section-bg: #1e1e1e; /* Dark mode section background (dark gray) */
+  --section-bg: #1e1e1e; /* Dark mode section background */
   --navbar-bg: #000;
   --card-bg: #222;
   --accent-color: #ffb74d;
   --footer-bg: #1a1a1a;
-  /* NOTE: --carousel-bg is intentionally NOT defined here.
-           It will fall back to the light mode value (white: #ffffff)
-           which is what you wanted for contrast.
-  */
 }
 
 /* 2. Remove the specific light backgrounds you had defined lower down */
@@ -261,7 +249,7 @@ body.dark-mode .toggle-circle {
   transition: transform 0.3s ease, background 0.3s ease;
 }
 .hero a:hover {transform: scale(0.95); background: #0c07075d;}
-.hero h2, .hero p {transition: transform 0.3s ease, color: 0.3s ease;}
+.hero h2, .hero p {transition: transform 0.3s ease, color 0.3s ease;}
 .hero h2:hover, .hero p:hover {transform: scale(0.95); color: grey;}
 .hero-content {position: relative; z-index: 2; max-width: 800px; margin: 0 auto;}
 body.dark-mode .hero::after {
@@ -378,7 +366,7 @@ body.dark-mode .hero::after {
 .video-container {
   display: flex;
   gap: 25px;
-  /* padding: 0 20px; - REMOVED padding here, moved to .video-wrapper/shop-carousel */
+  padding: 0 20px; /* horizontal only, no top padding */
   box-sizing: border-box;
 }
 .video-card:hover {transform: translateY(-5px);}
